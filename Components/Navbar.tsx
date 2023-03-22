@@ -1,8 +1,9 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography, CardMedia } from "@mui/material";
 import React from "react";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { useSelector } from "react-redux";
 import { RootState } from "@/Redux/store";
+import logo from "../assets/logo.svg";
 
 function Navbar() {
   const count = useSelector((state: RootState) => state.basket.count);
@@ -19,7 +20,7 @@ function Navbar() {
         padding="0 10px"
       >
         <Box>
-          <Typography>Welcome to the Store</Typography>
+          <img src={logo.src} alt="" width={100} height={100} />
         </Box>
         <Box sx={{ position: "relative" }}>
           <ShoppingBagIcon />
