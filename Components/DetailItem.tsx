@@ -1,31 +1,35 @@
+import { ItemType } from "@/Types/ItemModel";
 import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Button,
   Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
 } from "@mui/material";
-import { ItemCart } from "@/Types/ItemModel";
-import { increment } from "@/Redux/countSlice";
+import React, { FC } from "react";
 import { useDispatch } from "react-redux";
+import { increment } from "@/Redux/countSlice";
 import { addBasket } from "@/Redux/basketSlice";
-import { useRouter } from "next/router";
 
-const Item = ({ title, image, price, id }: ItemCart) => {
-  const router = useRouter();
+const DetailItem: FC<ItemType> = ({
+  category,
+  description,
+  id,
+  image,
+  price,
+  rating,
+  title,
+}) => {
   const dispatch = useDispatch();
-  const addClick = () => {
+  const addCart = () => {
     dispatch(increment());
     dispatch(addBasket({ title, image, price, id, count: 1, totalPrice: 0 }));
-  };
-  const detailClick = () => {
-    router.push(`/${id}`);
   };
   return (
     <Card
       sx={{
-        width: 350,
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -42,8 +46,11 @@ const Item = ({ title, image, price, id }: ItemCart) => {
           title={title}
         />
         <CardContent>
-          <Typography variant="h6" component="div">
+          <Typography variant="h4" component="div">
             {title}
+          </Typography>
+          <Typography variant="h5" component="div" color="blue">
+            {description}
           </Typography>
           <Typography variant="body1" component="p" color="maroon">
             ${price}
@@ -62,22 +69,13 @@ const Item = ({ title, image, price, id }: ItemCart) => {
           sx={{ m: "10px" }}
           size="small"
           variant="contained"
-          onClick={addClick}
+          onClick={addCart}
         >
           Add to cart
-        </Button>
-
-        <Button
-          sx={{ m: "10px" }}
-          size="small"
-          variant="outlined"
-          onClick={detailClick}
-        >
-          Detail
         </Button>
       </Box>
     </Card>
   );
 };
 
-export default Item;
+export default DetailItem;

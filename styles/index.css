@@ -7,3 +7,9 @@
 body {
   background-color: #eee;
 }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}

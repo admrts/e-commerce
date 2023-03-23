@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React from "react";
 import { Container, Stack } from "@mui/material";
 import Item from "./Item";
-import { ItemType } from "@/Model/ItemModel";
 
+// type ?
 const ItemList = ({ items }: any) => {
   return (
     <Container>
@@ -19,6 +19,7 @@ const ItemList = ({ items }: any) => {
               image={item.image}
               price={item.price}
               title={item.title}
+              id={item.id}
             />
           );
         })}

@@ -1,12 +1,13 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { ItemType } from "@/Model/ItemModel";
-import getProducts from "@/Network/API";
+import { ItemType } from "@/Types/ItemModel";
+import { getProducts } from "@/Network/API";
 import ItemList from "@/Components/ItemList";
 import Navbar from "@/Components/Navbar";
+import Loader from "@/Components/Loader";
 
 export default function Home() {
-  const [itemData, setItemData] = useState<ItemType[]>();
+  const [itemData, setItemData] = useState();
   const getData = async () => {
     const items = await getProducts();
     setItemData(items);
@@ -24,7 +25,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar />
-      {itemData ? <ItemList items={itemData} /> : <div>Loading....</div>}
+      {itemData ? <ItemList items={itemData} /> : <Loader />}
     </>
   );
 }

@@ -8,13 +8,23 @@ export type ItemType = {
   title: string;
 };
 
+export type Rating = {
+  count: number;
+  rate: number;
+};
+
 export type ItemCart = {
   title: string;
   image: string;
   price: number;
+  id: number;
 };
 
-export type Rating = {
+export type BasketCart = {
+  title: string;
+  image: string;
+  price: number;
   count: number;
-  rate: number;
+  id: number;
+  totalPrice: number;
 };

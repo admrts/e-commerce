@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import countSliceReducer from "./countSlice";
 import basketSliceReducer from "./basketSlice";
 
 export const store = configureStore({
   reducer: {
+    count: countSliceReducer,
     basket: basketSliceReducer,
   },
 });
