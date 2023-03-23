@@ -2,7 +2,7 @@ import Basket from "@/Components/Basket";
 import Navbar from "@/Components/Navbar";
 import React from "react";
 
-function index() {
+function Index() {
   return (
     <>
       <Navbar />
@@ -11,4 +11,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

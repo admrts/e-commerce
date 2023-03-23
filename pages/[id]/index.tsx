@@ -6,7 +6,7 @@ import Navbar from "@/Components/Navbar";
 import DetailItem from "@/Components/DetailItem";
 import { Container, Stack } from "@mui/material";
 
-const index = () => {
+const Index = () => {
   const router = useRouter();
   const id = router.query.id;
   const [itemData, setItemData] = useState<ItemType>();
@@ -41,4 +41,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

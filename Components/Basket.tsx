@@ -12,8 +12,7 @@ function Basket() {
 
   useEffect(() => {
     dispatch(calculateItemTotalPrice());
-    console.log("calculate");
-  }, [items]);
+  }, [items, dispatch]);
 
   if (items.length === 0) {
     return (
