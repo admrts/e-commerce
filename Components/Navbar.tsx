@@ -25,7 +25,6 @@ function Navbar() {
         <Box>
           <Link href="/">
             <Image src={logo} alt="logo" height={100} width={100} priority />
-            {/* <img src={logo.src} alt="logo" width={100} height={100} /> */}
           </Link>
         </Box>
         <Box sx={{ position: "relative", mr: "14px" }}>

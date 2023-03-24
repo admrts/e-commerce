@@ -37,6 +37,7 @@ function BasketItem({
       <Stack flexDirection="row" gap={1}>
         <Box>
           <Image src={image} alt={title} width={100} height={100} />
+          {/* <img src={image} alt={title} width={100} height={100} /> */}
         </Box>
 
         <Stack justifyContent="space-between">
