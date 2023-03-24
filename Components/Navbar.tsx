@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/Redux/store";
 import logo from "../assets/logo.svg";
 import Link from "next/link";
+import Image from "next/image";
 
 function Navbar() {
   const count = useSelector((state: RootState) => state.count.count);
@@ -23,7 +24,8 @@ function Navbar() {
       >
         <Box>
           <Link href="/">
-            <img src={logo.src} alt="logo" width={100} height={100} />
+            <Image src={logo} alt="logo" height={100} width={100} priority />
+            {/* <img src={logo.src} alt="logo" width={100} height={100} /> */}
           </Link>
         </Box>
         <Box sx={{ position: "relative", mr: "14px" }}>

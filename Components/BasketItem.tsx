@@ -7,6 +7,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { increment, decrement } from "@/Redux/countSlice";
 import { moneyFormat } from "@/helpers";
+import Image from "next/image";
 
 function BasketItem({
   title,
@@ -35,7 +36,7 @@ function BasketItem({
     >
       <Stack flexDirection="row" gap={1}>
         <Box>
-          <img src={image} alt={title} width={100} height={100} />
+          <Image src={image} alt={title} width={100} height={100} />
         </Box>
 
         <Stack justifyContent="space-between">

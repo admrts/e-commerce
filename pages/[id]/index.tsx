@@ -10,14 +10,14 @@ const Index = () => {
   const router = useRouter();
   const id = router.query.id;
   const [itemData, setItemData] = useState<ItemType>();
-  const getData = async () => {
-    const item = await getOneItem(String(id));
-    setItemData(item);
-  };
 
   useEffect(() => {
+    const getData = async () => {
+      const item = await getOneItem(String(id));
+      setItemData(item);
+    };
     getData();
-  }, []);
+  }, [id]);
 
   return (
     <>
