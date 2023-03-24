@@ -1,6 +1,6 @@
 import { Box, IconButton, Stack, Typography } from "@mui/material";
 import React from "react";
-import { BasketCart } from "@/Types/ItemModel";
+import { BasketCart } from "@/Types/types";
 import { useDispatch } from "react-redux";
 import { addButton, minusButton } from "@/Redux/basketSlice";
 import AddIcon from "@mui/icons-material/Add";

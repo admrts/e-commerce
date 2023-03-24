@@ -1,4 +1,4 @@
-import { ItemType } from "@/Types/ItemModel";
+import { ItemType } from "@/Types/types";
 import {
   Box,
   Button,

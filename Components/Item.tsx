@@ -6,7 +6,7 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import { ItemCart } from "@/Types/ItemModel";
+import { ItemCart } from "@/Types/types";
 import { increment } from "@/Redux/countSlice";
 import { useDispatch } from "react-redux";
 import { addBasket } from "@/Redux/basketSlice";

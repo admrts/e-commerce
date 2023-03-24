@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
-import { BasketCart } from "@/Types/ItemModel";
+import { BasketCart } from "@/Types/types";
 
 interface BasketState {
   items: Array<BasketCart>;

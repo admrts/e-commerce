@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getOneItem } from "@/Network/API";
-import { ItemType } from "@/Types/ItemModel";
+import { ItemType } from "@/Types/types";
 import Navbar from "@/Components/Navbar";
 import DetailItem from "@/Components/DetailItem";
 import { Container, Stack } from "@mui/material";
