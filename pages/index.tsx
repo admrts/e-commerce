@@ -7,10 +7,9 @@ import Navbar from "@/Components/Navbar";
 import Loader from "@/Components/Loader";
 
 export default function Home() {
-  const [itemData, setItemData] = useState();
+  const [itemData, setItemData] = useState<ItemType[]>();
   const getData = async () => {
-    const items = await getProducts();
-    setItemData(items);
+    setItemData(await getProducts());
   };
 
   useEffect(() => {

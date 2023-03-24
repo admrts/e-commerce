@@ -1,9 +1,19 @@
 import React from "react";
 import { Container, Stack } from "@mui/material";
 import Item from "./Item";
+import { ItemType } from "@/Types/types";
+
+interface MyProps {
+  items: Array<ItemType>;
+}
 
 // type ?
-const ItemList = ({ items }: any) => {
+const ItemList = ({ items }: MyProps) => {
+  // for (let i = 0; i < props.length; i++) {
+  //   console.log(props[i]);
+  // }
+  console.log(items);
+
   return (
     <Container>
       <Stack
@@ -12,7 +22,7 @@ const ItemList = ({ items }: any) => {
         justifyContent="center"
         gap={1}
       >
-        {items.map((item: any) => {
+        {items.map((item: ItemType) => {
           return (
             <Item
               key={item.id}
