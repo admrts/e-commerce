@@ -30,6 +30,7 @@ const ItemList = ({ items }: MyProps) => {
               price={item.price}
               title={item.title}
               id={item.id}
+              rating={item.rating}
             />
           );
         })}

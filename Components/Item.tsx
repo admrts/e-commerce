@@ -11,10 +11,15 @@ import { increment } from "@/Redux/countSlice";
 import { useDispatch } from "react-redux";
 import { addBasket } from "@/Redux/basketSlice";
 import { useRouter } from "next/router";
+import { starsCount } from "@/helpers";
+import Stars from "./Stars";
 
-const Item = ({ title, image, price, id }: ItemCart) => {
+const Item = ({ title, image, price, id, rating }: ItemCart) => {
   const router = useRouter();
   const dispatch = useDispatch();
+
+  const rate = starsCount(rating.rate);
+
   const addClick = () => {
     dispatch(increment());
     dispatch(addBasket({ title, image, price, id, count: 1, totalPrice: 0 }));
@@ -45,6 +50,7 @@ const Item = ({ title, image, price, id }: ItemCart) => {
           <Typography variant="h6" component="div">
             {title}
           </Typography>
+          <Stars rate={rate} />
           <Typography variant="body1" component="p" color="maroon">
             ${price}
           </Typography>

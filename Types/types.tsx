@@ -18,6 +18,7 @@ export type ItemCart = {
   image: string;
   price: number;
   id: number;
+  rating: Rating;
 };
 
 export type BasketCart = {
