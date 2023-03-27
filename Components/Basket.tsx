@@ -39,6 +39,7 @@ function Basket() {
             count={item.count}
             id={item.id}
             totalPrice={item.totalPrice}
+            rating={item.rating}
           />
         );
       })}

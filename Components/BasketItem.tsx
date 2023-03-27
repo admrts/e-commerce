@@ -8,6 +8,8 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { increment, decrement } from "@/Redux/countSlice";
 import { moneyFormat } from "@/helpers";
 import Image from "next/image";
+import { starsCount } from "@/helpers";
+import Stars from "./Stars";
 
 function BasketItem({
   title,
@@ -16,6 +18,7 @@ function BasketItem({
   count,
   id,
   totalPrice,
+  rating,
 }: BasketCart) {
   const dispatch = useDispatch();
 
@@ -27,6 +30,8 @@ function BasketItem({
     dispatch(minusButton(id));
     dispatch(decrement());
   };
+
+  const rate = starsCount(rating.rate);
 
   return (
     <Stack
@@ -42,6 +47,7 @@ function BasketItem({
 
         <Stack justifyContent="space-between">
           <Box>{title}</Box>
+          <Stars rate={rate} />
           <Box>${price}</Box>
 
           <Stack flexDirection="row" alignItems="center">

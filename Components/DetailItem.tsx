@@ -11,6 +11,8 @@ import React, { FC } from "react";
 import { useDispatch } from "react-redux";
 import { increment } from "@/Redux/countSlice";
 import { addBasket } from "@/Redux/basketSlice";
+import { starsCount } from "@/helpers";
+import Stars from "./Stars";
 
 const DetailItem: FC<ItemType> = ({
   category,
@@ -24,8 +26,12 @@ const DetailItem: FC<ItemType> = ({
   const dispatch = useDispatch();
   const addCart = () => {
     dispatch(increment());
-    dispatch(addBasket({ title, image, price, id, count: 1, totalPrice: 0 }));
+    dispatch(
+      addBasket({ title, image, price, id, rating, count: 1, totalPrice: 0 })
+    );
   };
+  const rate = starsCount(rating.rate);
+
   return (
     <Card
       sx={{
@@ -52,6 +58,7 @@ const DetailItem: FC<ItemType> = ({
           <Typography variant="h5" component="div" color="blue">
             {description}
           </Typography>
+          <Stars rate={rate} />
           <Typography variant="body1" component="p" color="maroon">
             ${price}
           </Typography>

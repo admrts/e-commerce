@@ -22,7 +22,9 @@ const Item = ({ title, image, price, id, rating }: ItemCart) => {
 
   const addClick = () => {
     dispatch(increment());
-    dispatch(addBasket({ title, image, price, id, count: 1, totalPrice: 0 }));
+    dispatch(
+      addBasket({ title, image, price, id, rating, count: 1, totalPrice: 0 })
+    );
   };
   const detailClick = () => {
     router.push(`/${id}`);

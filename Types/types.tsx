@@ -28,4 +28,5 @@ export type BasketCart = {
   count: number;
   id: number;
   totalPrice: number;
+  rating: Rating;
 };
