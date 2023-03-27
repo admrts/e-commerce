@@ -32,6 +32,6 @@ pnpm dev
 
 ### ScreenShots
 
-![](./assets/ss1.png)
-![](./assets/ss2.png)
-![](./assets/ss3.png)
+![](./assets/s1.png)
+![](./assets/s2.png)
+![](./assets/s3.png)
